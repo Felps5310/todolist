@@ -4,7 +4,8 @@ app  = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "<html><body>Hello World</body></html>"
+    #templates/home
+    return render_template(home.html)
 @app.route("/bye")
 def bye():
     return "Bye"
