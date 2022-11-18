@@ -2,6 +2,11 @@ from flask import Flask, render_template
 
 app  = Flask(__name__)
 
+tasks = [
+    {'name':'Estudar','finished':False},
+    {'name':'Dormir','finished':True}
+]
+
 @app.route("/")
 def home():
     #templates/home
