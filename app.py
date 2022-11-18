@@ -4,7 +4,9 @@ app  = Flask(__name__)
 
 tasks = [
     {'name':'Estudar','finished':False},
-    {'name':'Dormir','finished':True}
+    {'name':'Dormir','finished':True},
+    {'name':'Comer','finished':True},
+    
 ]
 
 @app.route("/")
