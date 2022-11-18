@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app  = Flask(__name__)
 
@@ -13,8 +13,12 @@ tasks = [
 def home():
     #templates/home.html
     return render_template('home.html',tasks=tasks)
-@app.route("/bye")
-def bye():
-    return "Bye"
+
+@app.route("/create", methods=['POST'])
+def create():
+    name = request.form['name']
+    task = {'name': name, 'finished': False}
+    tasks.append(task)
+    return render_template('home.html',tasks=tasks)
 
 app.run(debug=True)
