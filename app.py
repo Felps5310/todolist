@@ -9,8 +9,8 @@ tasks = [
 
 @app.route("/")
 def home():
-    #templates/home
-    return render_templates(home.html)
+    #templates/home.html
+    return render_template('home.html',tasks=tasks)
 @app.route("/bye")
 def bye():
     return "Bye"
